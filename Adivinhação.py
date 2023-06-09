@@ -1,14 +1,18 @@
+#importa a biblioteca random para utilizar o codigo de aleatorização dos numeros
+import random
+
 print("*************************************")
 print("Ola, bem vindo ao jogo da adivinhação")
 print("*************************************")
 
 #variavel que ira definir o valor do numero secreto
-numero_secreto = 10
+#random.randint(1,30) = pegar um numero aleatorio entre 1 e 30, randint é para apenas numeros inteiros
+numero_secreto = random.randint(1,30)
 
 #input para começar o jogo ou paralo
 jogo = input("Deseja jogar o jogo?(S/N) ")
-tentativas = 3
-rodadas = 4
+tentativas = 11
+rodadas = 10
 #atribui duas regras a variavel "jogo"
 #.lower = pode utilizar tanto letra maiuscula quanto minuscula
 #.strip = ignora se há um espaço na resposta, por exemplo " s"
@@ -63,4 +67,4 @@ while (jogo == "s"):
     #Essa é a mensagem que ira aparecer caso o numero de tentativas chegue a 0
     print("Fim de jogo, a resposta certa é {}".format(numero_secreto))
     #perguntara se o jogador deseja jogar novamente, e atribuira esse valor ao "jogo"
-    jogo = input("Deseja jogar novamente?(S/N): ")       
+    jogo = input("Deseja jogar novamente?(S/N): ")    
