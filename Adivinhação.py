@@ -7,23 +7,35 @@ print("*************************************")
 
 #variavel que ira definir o valor do numero secreto
 #random.randint(1,30) = pegar um numero aleatorio entre 1 e 30, randint é para apenas numeros inteiros
-numero_secreto = random.randint(1,30)
+#o random possui algumas variedades
+random.seed(30)
+numero_secreto = random.randrange(1,30)
 
 #input para começar o jogo ou paralo
 jogo = input("Deseja jogar o jogo?(S/N) ")
-tentativas = 11
-rodadas = 10
+rodadas = 3
 #atribui duas regras a variavel "jogo"
 #.lower = pode utilizar tanto letra maiuscula quanto minuscula
 #.strip = ignora se há um espaço na resposta, por exemplo " s"
 jogo = jogo.lower().strip()
 
+#atribuindo niveis para o jogador
+print("Qual nivel deseja jogar?")
+print("(1) facil / (2 medio) (3)dificil")
+nivel = int(input("Digite a dificuldade: "))
+
+if(nivel == 1):
+    tentativas = 20
+elif(nivel == 2):
+    tentativas = 10
+else:
+    tentativas = 5
 #Estrutura de repetição para que o jogo aconteça caso a resposta da variavel "jogo" for "s"
 while (jogo == "s"):
     #outro while para caso o numero de tentativas for maior que 0    
     # while(tentativas > 0):
     #o for ira fazer um loop que nem o While, porem ja atribuindo +1 a variavel "rodadas"
-    for rodadas in range(1,rodadas):
+    for rodadas in range(1,tentativas):
         #Ira mostrar o numero de tentativas que ainda restam, decaindo caso o jogador erre
         #{} e .format = uma maneira mais bonita de deixar o codigo, onde as "{}" irao mostrar o valor dentro do ".format(variavel)"
         print("tentativas restantes {}".format(tentativas))
@@ -67,4 +79,4 @@ while (jogo == "s"):
     #Essa é a mensagem que ira aparecer caso o numero de tentativas chegue a 0
     print("Fim de jogo, a resposta certa é {}".format(numero_secreto))
     #perguntara se o jogador deseja jogar novamente, e atribuira esse valor ao "jogo"
-    jogo = input("Deseja jogar novamente?(S/N): ")    
+    jogo = input("Deseja jogar novamente?(S/N): ")       
