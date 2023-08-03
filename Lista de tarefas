@@ -1,0 +1,33 @@
+print("Bem vindo a sua lista de afazeres!")
+lista = []
+para = int(input("Deseja adicionar items a sua lista? (1 = sim / 2 = não): "))
+
+if para == 1:
+    numero = int(input("Quantos itens deseja adicionar? "))
+    contador = 0  # Inicializa o contador de itens adicionados
+    while contador < numero:  # Enquanto o contador for menor que o número desejado
+        dever = input("Digite o que deseja adicionar à lista: ")
+        lista.append(dever)
+        contador += 1  # Incrementa o contador após adicionar um item
+
+print("----------------------------------------------")
+print("Esta é a sua lista:")
+for item in lista:
+    print("[ ] " + item)
+print("----------------------------------------------")
+
+check = int(input("Ja realizou alguma dessas tarefas? (1 = sim / 2 = não): "))
+if check == 1:
+    numero = int(input("Quantas tarefas foram feitas? "))
+    contador2 = 0
+    while contador2 < numero:
+        feita = input("Qual tarefa foi feita? ")
+        pronto = "[*]" + feita
+        lista.append(pronto)
+        contador2 += 1
+
+print("----------------------------------------------")
+print("Esta é a sua lista atualizada:")
+for item in lista:
+    print(item)
+print("----------------------------------------------")
